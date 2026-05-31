@@ -78,8 +78,13 @@ const assistants = [
 ];
 
 function LifeOS() {
-  const now = new Date();
-  const time = now.toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit" });
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const update = () => setTime(new Date().toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit" }));
+    update();
+    const id = setInterval(update, 30_000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-warm">
