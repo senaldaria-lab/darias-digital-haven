@@ -62,19 +62,19 @@ function LifeOS() {
       {/* abstract digital studio background */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         {/* soft architectural orbs */}
-        <div className="absolute -top-60 -left-40 h-[640px] w-[640px] rounded-full blur-[120px] opacity-50 drift"
-          style={{ background: "radial-gradient(circle, oklch(0.9 0.04 240 / 0.8), transparent 70%)" }} />
-        <div className="absolute -bottom-60 -right-40 h-[700px] w-[700px] rounded-full blur-[140px] opacity-55"
-          style={{ background: "radial-gradient(circle, oklch(0.94 0.025 70 / 0.85), transparent 70%)" }} />
+        <div className="absolute -top-60 -left-40 h-[640px] w-[640px] rounded-full blur-[120px] opacity-55 drift"
+          style={{ background: "radial-gradient(circle, oklch(0.96 0.02 80 / 0.85), transparent 70%)" }} />
+        <div className="absolute -bottom-60 -right-40 h-[700px] w-[700px] rounded-full blur-[140px] opacity-60"
+          style={{ background: "radial-gradient(circle, oklch(0.95 0.022 70 / 0.85), transparent 70%)" }} />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[420px] w-[420px] rounded-full blur-[110px] opacity-35"
-          style={{ background: "radial-gradient(circle, oklch(0.86 0.035 250 / 0.7), transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, oklch(0.93 0.018 75 / 0.75), transparent 70%)" }} />
 
         {/* wave svg */}
-        <svg className="absolute inset-x-0 top-0 w-full h-[800px] opacity-[0.07]" viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <svg className="absolute inset-x-0 top-0 w-full h-[800px] opacity-[0.06]" viewBox="0 0 1440 800" preserveAspectRatio="none">
           <defs>
             <linearGradient id="ln" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="oklch(0.32 0.035 55)" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="oklch(0.5 0.04 245)" stopOpacity="0.2" />
+              <stop offset="0%" stopColor="oklch(0.4 0.04 55)" stopOpacity="0.55" />
+              <stop offset="100%" stopColor="oklch(0.6 0.03 70)" stopOpacity="0.2" />
             </linearGradient>
           </defs>
           {Array.from({ length: 9 }).map((_, i) => (
@@ -86,7 +86,7 @@ function LifeOS() {
         {/* floating glass shards */}
         <div className="absolute top-[18%] right-[6%] h-24 w-24 rounded-3xl glass-solid float-soft rotate-12" />
         <div className="absolute top-[58%] left-[3%] h-16 w-40 rounded-full glass-solid float-soft" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-[12%] left-[14%] h-2.5 w-2.5 rounded-full bg-cool/50" />
+        <div className="absolute top-[12%] left-[14%] h-2.5 w-2.5 rounded-full bg-taupe/40" />
         <div className="absolute top-[42%] right-[16%] h-1.5 w-1.5 rounded-full bg-taupe/40" />
       </div>
 
@@ -166,16 +166,16 @@ function LifeOS() {
 
             {/* decorative arc */}
             <svg aria-hidden className="absolute -bottom-20 -right-10 w-[420px] h-[420px] opacity-25" viewBox="0 0 400 400">
-              <circle cx="200" cy="200" r="180" fill="none" stroke="oklch(0.32 0.035 55)" strokeWidth="0.5" />
-              <circle cx="200" cy="200" r="140" fill="none" stroke="oklch(0.5 0.04 245)" strokeWidth="0.5" />
-              <circle cx="200" cy="200" r="100" fill="none" stroke="oklch(0.32 0.035 55)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="180" fill="none" stroke="oklch(0.4 0.045 55)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="140" fill="none" stroke="oklch(0.55 0.03 70)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="100" fill="none" stroke="oklch(0.4 0.045 55)" strokeWidth="0.5" />
             </svg>
           </div>
 
           {/* state panel */}
           <div className="rounded-[36px] glass-lift p-8 flex flex-col gap-6 relative overflow-hidden">
-            <div aria-hidden className="absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-40"
-              style={{ background: "radial-gradient(circle, oklch(0.9 0.04 245 / 0.7), transparent 70%)" }} />
+            <div aria-hidden className="absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-50"
+              style={{ background: "radial-gradient(circle, oklch(0.94 0.022 75 / 0.85), transparent 70%)" }} />
             <div className="relative flex items-center justify-between">
               <p className="text-[10.5px] uppercase tracking-[0.24em] text-muted-foreground">Простір</p>
               <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
@@ -185,10 +185,10 @@ function LifeOS() {
 
             <div className="relative space-y-5 flex-1">
               {[
-                { k: "Енергія", v: "ясна", bar: 78, tone: "cool" },
-                { k: "Команда", v: "6 готові", bar: 100, tone: "warm" },
-                { k: "Фокус", v: "глибокий", bar: 64, tone: "cool" },
-                { k: "Календар", v: "вільно до 14:00", bar: 40, tone: "warm" },
+                { k: "Енергія", v: "ясна", bar: 78, tone: "warm" },
+                { k: "Команда", v: "6 готові", bar: 100, tone: "espresso" },
+                { k: "Фокус", v: "глибокий", bar: 64, tone: "warm" },
+                { k: "Календар", v: "вільно до 14:00", bar: 40, tone: "espresso" },
               ].map((s) => (
                 <div key={s.k}>
                   <div className="flex items-baseline justify-between mb-2">
@@ -198,9 +198,9 @@ function LifeOS() {
                   <div className="h-1 rounded-full bg-foreground/[0.05] overflow-hidden">
                     <div className="h-full rounded-full" style={{
                       width: `${s.bar}%`,
-                      background: s.tone === "cool"
-                        ? "linear-gradient(90deg, oklch(0.78 0.04 245), oklch(0.5 0.04 245))"
-                        : "linear-gradient(90deg, oklch(0.85 0.03 70), oklch(0.5 0.04 55))",
+                      background: s.tone === "warm"
+                        ? "linear-gradient(90deg, oklch(0.88 0.025 75), oklch(0.6 0.04 60))"
+                        : "linear-gradient(90deg, oklch(0.7 0.04 55), oklch(0.4 0.045 50))",
                     }} />
                   </div>
                 </div>

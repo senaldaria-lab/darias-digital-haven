@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { CheckCircle2, Heart, Briefcase, Clock } from "lucide-react";
 
 const items = [
-  { icon: CheckCircle2, label: "3 важливі задачі", meta: "сьогодні", tint: "oklch(0.92 0.02 240)" },
+  { icon: CheckCircle2, label: "3 важливі задачі", meta: "сьогодні", tint: "oklch(0.95 0.018 75)" },
   { icon: Heart, label: "1 особистий фокус", meta: "для себе", tint: "oklch(0.94 0.022 70)" },
-  { icon: Briefcase, label: "1 бізнес-фокус", meta: "стратегія", tint: "oklch(0.9 0.025 245)" },
-  { icon: Clock, label: "1 незавершена справа", meta: "перенесено", tint: "oklch(0.93 0.012 60)" },
+  { icon: Briefcase, label: "1 бізнес-фокус", meta: "стратегія", tint: "oklch(0.93 0.02 65)" },
+  { icon: Clock, label: "1 незавершена справа", meta: "перенесено", tint: "oklch(0.95 0.014 80)" },
 ];
 
 export function TodayBlock() {
@@ -19,8 +19,8 @@ export function TodayBlock() {
   return (
     <section className="relative rounded-[32px] glass-lift p-8 md:p-10 overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-aurora opacity-60 pointer-events-none" />
-      <div aria-hidden className="absolute -top-20 -right-20 h-64 w-64 rounded-full blur-3xl opacity-40"
-        style={{ background: "radial-gradient(circle, oklch(0.88 0.05 240 / 0.7), transparent 70%)" }} />
+      <div aria-hidden className="absolute -top-20 -right-20 h-64 w-64 rounded-full blur-3xl opacity-50"
+        style={{ background: "radial-gradient(circle, oklch(0.94 0.022 75 / 0.8), transparent 70%)" }} />
 
       <div className="relative flex flex-wrap items-end justify-between gap-6 mb-10">
         <div>

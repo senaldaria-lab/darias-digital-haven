@@ -48,8 +48,8 @@
 :root {
   --radius: 1rem;
 
-  /* pearl base with cool undertone */
-  --background: oklch(0.985 0.004 240);
+  /* pearl base with warm beige undertone */
+  --background: oklch(0.987 0.005 80);
   --foreground: oklch(0.26 0.018 50);
 
   --card: oklch(0.995 0.003 240 / 0.65);
@@ -93,12 +93,12 @@
   --surface-glass: oklch(1 0 0 / 0.5);
   --surface-glass-strong: oklch(1 0 0 / 0.7);
 
-  --gradient-pearl: linear-gradient(135deg, oklch(0.985 0.004 240), oklch(0.96 0.008 245));
-  --gradient-warm-cool: linear-gradient(140deg, oklch(0.97 0.012 70) 0%, oklch(0.95 0.014 240) 100%);
+  --gradient-pearl: linear-gradient(135deg, oklch(0.99 0.004 80), oklch(0.965 0.01 75));
+  --gradient-warm-cool: linear-gradient(140deg, oklch(0.98 0.01 70) 0%, oklch(0.96 0.012 80) 100%);
   --gradient-espresso: linear-gradient(135deg, oklch(0.44 0.05 55), oklch(0.34 0.04 48));
-  --gradient-aurora: radial-gradient(circle at 18% 22%, oklch(0.92 0.04 240 / 0.55), transparent 55%),
-    radial-gradient(circle at 82% 30%, oklch(0.95 0.025 70 / 0.65), transparent 55%),
-    radial-gradient(circle at 55% 95%, oklch(0.88 0.035 250 / 0.5), transparent 60%);
+  --gradient-aurora: radial-gradient(circle at 18% 22%, oklch(0.96 0.018 80 / 0.7), transparent 55%),
+    radial-gradient(circle at 82% 30%, oklch(0.96 0.022 70 / 0.65), transparent 55%),
+    radial-gradient(circle at 55% 95%, oklch(0.94 0.014 75 / 0.55), transparent 60%);
 
   --shadow-soft: 0 1px 2px oklch(0.3 0.02 60 / 0.04),
     0 12px 32px -16px oklch(0.3 0.02 60 / 0.14);
