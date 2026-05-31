@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ListTodo, NotebookPen, Sparkles, TrendingUp, BellRing } from "lucide-react";
+import { ListTodo, NotebookPen, Sparkles, TrendingUp, BellRing, Command } from "lucide-react";
 
 import brain from "@/assets/brain.png";
 import anna from "@/assets/anna.png";
@@ -20,12 +20,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Life OS — спокійний і чіткий персональний AI-простір. Команда асистентів, фокус дня, нотатки і нагадування в одному місці.",
+          "Life OS — персональний AI workspace. Команда асистентів, фокус дня і ритм твого життя в одному просторі.",
       },
       { property: "og:title", content: "Life OS — Особистий цифровий простір" },
       {
         property: "og:description",
-        content: "Персональний AI-простір. Не CRM, не офіс — твоя команда, твій ритм.",
+        content: "Персональний AI workspace. Стильний, спокійний, твій.",
       },
     ],
   }),
@@ -33,100 +33,85 @@ export const Route = createFileRoute("/")({
 });
 
 const assistants = [
-  {
-    name: "Brain",
-    role: "Головний координатор",
-    image: brain,
-    accent: "cool" as const,
-    actions: ["Мій фокус", "План на день", "Підсумок дня"],
-  },
-  {
-    name: "Anna",
-    role: "Контент і маркетинг",
-    image: anna,
-    accent: "warm" as const,
-    actions: ["Зроби допис", "Ідея для рілс", "План на тиждень"],
-  },
-  {
-    name: "Alex",
-    role: "Бізнес",
-    image: alex,
-    accent: "cool" as const,
-    actions: ["Нові можливості", "Перевір Shopify", "План продажів"],
-  },
-  {
-    name: "Sofia",
-    role: "Особистий асистент",
-    image: sofia,
-    accent: "warm" as const,
-    actions: ["Мої задачі", "Нагадати", "План тижня"],
-  },
-  {
-    name: "Leo",
-    role: "Фінанси і трейдинг",
-    image: leo,
-    accent: "cool" as const,
-    actions: ["Trading status", "Фінансовий звіт", "Контроль витрат"],
-  },
-  {
-    name: "Maya",
-    role: "Сім'я",
-    image: maya,
-    accent: "warm" as const,
-    actions: ["Аліса", "Сімейний календар", "Події"],
-  },
+  { name: "Brain", role: "Головний координатор", image: brain, accent: "neutral" as const,
+    actions: ["Мій фокус", "План на день", "Підсумок дня"] },
+  { name: "Anna", role: "Контент і маркетинг", image: anna, accent: "warm" as const,
+    actions: ["Зроби допис", "Ідея для рілс", "План на тиждень"] },
+  { name: "Alex", role: "Бізнес", image: alex, accent: "cool" as const,
+    actions: ["Нові можливості", "Перевір Shopify", "План продажів"] },
+  { name: "Sofia", role: "Особистий асистент", image: sofia, accent: "cool" as const,
+    actions: ["Мої задачі", "Нагадати", "План тижня"] },
+  { name: "Leo", role: "Фінанси і трейдинг", image: leo, accent: "neutral" as const,
+    actions: ["Trading status", "Фінансовий звіт", "Контроль витрат"] },
+  { name: "Maya", role: "Сім'я", image: maya, accent: "warm" as const,
+    actions: ["Аліса", "Сімейний календар", "Події"] },
 ];
 
 function LifeOS() {
   const [time, setTime] = useState("");
   useEffect(() => {
-    const update = () => setTime(new Date().toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit" }));
+    const update = () =>
+      setTime(new Date().toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit" }));
     update();
     const id = setInterval(update, 30_000);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-warm">
-      {/* abstract ambient layers */}
+    <div className="relative min-h-screen overflow-hidden bg-pearl">
+      {/* abstract digital studio background */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-50"
-          style={{ background: "radial-gradient(circle, oklch(0.92 0.04 240 / 0.7), transparent 70%)" }} />
-        <div className="absolute -bottom-40 -right-40 h-[600px] w-[600px] rounded-full blur-3xl opacity-60"
-          style={{ background: "radial-gradient(circle, oklch(0.94 0.025 80 / 0.8), transparent 70%)" }} />
-        <div className="absolute top-1/3 right-1/4 h-[300px] w-[300px] rounded-full blur-3xl opacity-40"
-          style={{ background: "radial-gradient(circle, oklch(0.88 0.03 250 / 0.6), transparent 70%)" }} />
+        {/* soft architectural orbs */}
+        <div className="absolute -top-60 -left-40 h-[640px] w-[640px] rounded-full blur-[120px] opacity-50 drift"
+          style={{ background: "radial-gradient(circle, oklch(0.9 0.04 240 / 0.8), transparent 70%)" }} />
+        <div className="absolute -bottom-60 -right-40 h-[700px] w-[700px] rounded-full blur-[140px] opacity-55"
+          style={{ background: "radial-gradient(circle, oklch(0.94 0.025 70 / 0.85), transparent 70%)" }} />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[420px] w-[420px] rounded-full blur-[110px] opacity-35"
+          style={{ background: "radial-gradient(circle, oklch(0.86 0.035 250 / 0.7), transparent 70%)" }} />
+
+        {/* wave svg */}
+        <svg className="absolute inset-x-0 top-0 w-full h-[800px] opacity-[0.07]" viewBox="0 0 1440 800" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="ln" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="oklch(0.32 0.035 55)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="oklch(0.5 0.04 245)" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          {Array.from({ length: 9 }).map((_, i) => (
+            <path key={i} d={`M0,${120 + i * 70} C 360,${60 + i * 60} 1080,${200 + i * 70} 1440,${100 + i * 65}`}
+              stroke="url(#ln)" strokeWidth="0.6" fill="none" />
+          ))}
+        </svg>
+
+        {/* floating glass shards */}
+        <div className="absolute top-[18%] right-[6%] h-24 w-24 rounded-3xl glass-solid float-soft rotate-12" />
+        <div className="absolute top-[58%] left-[3%] h-16 w-40 rounded-full glass-solid float-soft" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-[12%] left-[14%] h-2.5 w-2.5 rounded-full bg-cool/50" />
+        <div className="absolute top-[42%] right-[16%] h-1.5 w-1.5 rounded-full bg-taupe/40" />
       </div>
 
-      {/* floating UI deco */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute top-32 right-[8%] h-20 w-20 rounded-2xl glass float-soft" style={{ animationDelay: "0s" }} />
-        <div className="absolute top-[55%] left-[4%] h-14 w-32 rounded-full glass float-soft" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-[18%] left-[10%] h-3 w-3 rounded-full bg-cool/60" />
-      </div>
-
-      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-8 pb-24">
+      <div className="relative max-w-[1380px] mx-auto px-5 md:px-10 pt-6 pb-24">
         {/* header */}
-        <header className="flex items-center justify-between mb-12">
+        <header className="flex items-center justify-between gap-4 mb-10">
           <div className="flex items-center gap-3">
-            <div className="relative h-9 w-9 rounded-xl glass flex items-center justify-center">
-              <div className="h-3 w-3 rounded-sm bg-foreground" />
+            <div className="relative h-10 w-10 rounded-2xl glass-solid grid place-items-center">
+              <div className="h-2.5 w-2.5 rounded-sm rotate-45" style={{ background: "var(--gradient-espresso)" }} />
             </div>
-            <div>
-              <p className="font-display text-xl leading-none">Life OS</p>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
-                персональний простір
+            <div className="leading-none">
+              <p className="font-display text-xl text-foreground">Life OS</p>
+              <p className="text-[9.5px] uppercase tracking-[0.24em] text-muted-foreground mt-1.5">
+                персональний AI-простір
               </p>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-1 rounded-full glass px-2 py-1.5 text-sm">
+          <nav className="hidden md:flex items-center gap-1 rounded-full glass-solid px-1.5 py-1.5 text-[12.5px]">
             {["Сьогодні", "Команда", "Простір", "Звіти"].map((l, i) => (
-              <a
-                key={l}
-                href="#"
-                className={`px-4 py-1.5 rounded-full transition ${
-                  i === 0 ? "bg-foreground text-background" : "text-foreground/70 hover:text-foreground"
+              <a key={l} href="#"
+                className={`px-4 py-2 rounded-full transition ${
+                  i === 0
+                    ? "btn-espresso text-primary-foreground"
+                    : "text-foreground/65 hover:text-foreground hover:bg-foreground/[0.04]"
                 }`}
               >
                 {l}
@@ -134,53 +119,71 @@ function LifeOS() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 rounded-full glass pl-2 pr-4 py-1.5">
-            <div className="h-7 w-7 rounded-full bg-foreground text-background grid place-items-center text-xs font-medium">
-              Д
-            </div>
-            <div className="hidden sm:block leading-none">
-              <p className="text-xs font-medium">Дарія</p>
-              <p className="text-[10px] text-muted-foreground mt-0.5 min-h-[12px]">{time ? `${time} · Київ` : "Київ"}</p>
+          <div className="flex items-center gap-2">
+            <button className="hidden sm:flex items-center gap-2 rounded-full btn-glass pl-3 pr-2 py-1.5 text-[11.5px] text-muted-foreground">
+              <Command className="h-3 w-3" strokeWidth={1.6} /> пошук
+              <span className="rounded-md bg-foreground/5 px-1.5 py-0.5 text-[9.5px] font-mono">⌘K</span>
+            </button>
+            <div className="flex items-center gap-2.5 rounded-full glass-solid pl-1.5 pr-3.5 py-1.5">
+              <div className="h-7 w-7 rounded-full grid place-items-center text-xs font-medium text-primary-foreground"
+                style={{ background: "var(--gradient-espresso)" }}>Д</div>
+              <div className="hidden sm:block leading-none">
+                <p className="text-[11.5px] font-medium">Дарія</p>
+                <p className="text-[9.5px] text-muted-foreground mt-1 min-h-[10px]">{time ? `${time} · Київ` : "Київ"}</p>
+              </div>
             </div>
           </div>
         </header>
 
-        {/* hero greeting */}
-        <section className="grid lg:grid-cols-[1.4fr_1fr] gap-8 mb-10">
-          <div className="rounded-[32px] p-10 md:p-14 relative overflow-hidden glass-lift">
-            <div aria-hidden className="absolute inset-0 bg-holo opacity-70" />
+        {/* hero */}
+        <section className="grid lg:grid-cols-[1.5fr_1fr] gap-6 mb-8">
+          <div className="relative rounded-[36px] p-10 md:p-14 overflow-hidden glass-lift">
+            <div aria-hidden className="absolute inset-0 bg-aurora opacity-70" />
+            <div aria-hidden className="absolute inset-0 noise opacity-50" />
+
             <div className="relative">
-              <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">
-                <span className="h-px w-8 bg-foreground/30" />
+              <p className="inline-flex items-center gap-3 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground mb-7">
+                <span className="h-px w-10 bg-taupe/40" />
                 Добрий ранок, Дарія
               </p>
-              <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.02] text-balance">
+              <h1 className="font-display text-[2.75rem] md:text-[5rem] leading-[1.02] text-foreground text-balance">
                 Твій особистий<br />
-                <span className="italic text-cool">цифровий офіс</span>.
+                <span className="italic" style={{ color: "var(--taupe)" }}>цифровий офіс</span>
               </h1>
-              <p className="mt-8 max-w-lg text-base text-muted-foreground leading-relaxed">
+              <p className="mt-8 max-w-md text-[15px] text-muted-foreground leading-relaxed">
                 Що сьогодні важливо для тебе? Команда поруч — обери, з чого почати ранок.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <button className="rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium hover:opacity-90 transition">
+              <div className="mt-9 flex flex-wrap items-center gap-3">
+                <button className="rounded-full btn-espresso px-6 py-3.5 text-[13px] font-medium">
                   Запитати команду
                 </button>
-                <button className="rounded-full glass px-6 py-3 text-sm font-medium hover:bg-card transition">
+                <button className="rounded-full btn-glass px-6 py-3.5 text-[13px] font-medium text-foreground">
                   Сьогоднішній фокус
                 </button>
               </div>
             </div>
+
+            {/* decorative arc */}
+            <svg aria-hidden className="absolute -bottom-20 -right-10 w-[420px] h-[420px] opacity-25" viewBox="0 0 400 400">
+              <circle cx="200" cy="200" r="180" fill="none" stroke="oklch(0.32 0.035 55)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="140" fill="none" stroke="oklch(0.5 0.04 245)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="100" fill="none" stroke="oklch(0.32 0.035 55)" strokeWidth="0.5" />
+            </svg>
           </div>
 
-          {/* live status panel */}
-          <div className="rounded-[32px] glass-lift p-8 flex flex-col gap-6 relative overflow-hidden">
-            <div className="flex items-center justify-between">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Простір</p>
-              <span className="text-[10px] text-muted-foreground">live</span>
+          {/* state panel */}
+          <div className="rounded-[36px] glass-lift p-8 flex flex-col gap-6 relative overflow-hidden">
+            <div aria-hidden className="absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-40"
+              style={{ background: "radial-gradient(circle, oklch(0.9 0.04 245 / 0.7), transparent 70%)" }} />
+            <div className="relative flex items-center justify-between">
+              <p className="text-[10.5px] uppercase tracking-[0.24em] text-muted-foreground">Простір</p>
+              <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> live
+              </span>
             </div>
 
-            <div className="space-y-5 flex-1">
+            <div className="relative space-y-5 flex-1">
               {[
                 { k: "Енергія", v: "ясна", bar: 78, tone: "cool" },
                 { k: "Команда", v: "6 готові", bar: 100, tone: "warm" },
@@ -189,105 +192,83 @@ function LifeOS() {
               ].map((s) => (
                 <div key={s.k}>
                   <div className="flex items-baseline justify-between mb-2">
-                    <span className="text-sm text-foreground/80">{s.k}</span>
-                    <span className="text-xs text-muted-foreground">{s.v}</span>
+                    <span className="text-[12.5px] text-foreground/80">{s.k}</span>
+                    <span className="text-[11px] text-muted-foreground">{s.v}</span>
                   </div>
-                  <div className="h-1 rounded-full bg-foreground/5 overflow-hidden">
-                    <div
-                      className="h-full rounded-full"
-                      style={{
-                        width: `${s.bar}%`,
-                        background:
-                          s.tone === "cool"
-                            ? "linear-gradient(90deg, oklch(0.72 0.06 240), oklch(0.55 0.04 245))"
-                            : "linear-gradient(90deg, oklch(0.85 0.03 80), oklch(0.55 0.025 60))",
-                      }}
-                    />
+                  <div className="h-1 rounded-full bg-foreground/[0.05] overflow-hidden">
+                    <div className="h-full rounded-full" style={{
+                      width: `${s.bar}%`,
+                      background: s.tone === "cool"
+                        ? "linear-gradient(90deg, oklch(0.78 0.04 245), oklch(0.5 0.04 245))"
+                        : "linear-gradient(90deg, oklch(0.85 0.03 70), oklch(0.5 0.04 55))",
+                    }} />
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-2xl bg-foreground/[0.04] hairline p-4">
-              <p className="text-xs text-muted-foreground mb-1">Поточна цитата дня</p>
-              <p className="font-display text-lg leading-snug">
-                «Менше шуму. Більше присутності.»
+            <div className="relative rounded-2xl hairline-strong p-4 bg-background/40">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Цитата дня</p>
+              <p className="font-display text-[18px] leading-snug">
+                «Менше шуму. <span className="italic" style={{ color: "var(--taupe)" }}>Більше присутності.</span>»
               </p>
             </div>
           </div>
         </section>
 
         {/* today */}
-        <div className="mb-16">
+        <div className="mb-14">
           <TodayBlock />
         </div>
 
-        {/* team section header */}
+        {/* team header */}
         <section className="mb-8 flex items-end justify-between flex-wrap gap-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">
+            <p className="text-[10.5px] uppercase tracking-[0.26em] text-muted-foreground mb-3">
               Твоя команда
             </p>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground text-balance">
-              Шість асистентів. <span className="italic text-cool">Один ритм.</span>
+            <h2 className="font-display text-[2.25rem] md:text-[3rem] leading-[1.05] text-foreground text-balance">
+              Шість асистентів. <span className="italic" style={{ color: "var(--taupe)" }}>Один ритм.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground">
+          <p className="max-w-sm text-[13.5px] text-muted-foreground leading-relaxed">
             Кожен веде свою сферу — від трейдингу до сім'ї. Запитай будь-кого однією дією.
           </p>
         </section>
 
-        <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {assistants.map((a) => (
-            <AssistantCard key={a.name} {...a} />
+        <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+          {assistants.map((a, i) => (
+            <AssistantCard key={a.name} {...a} index={i} />
           ))}
         </section>
 
-        {/* bottom modules */}
+        {/* utility modules */}
         <section className="mb-10">
           <div className="flex items-end justify-between mb-6">
-            <h2 className="font-display text-3xl md:text-4xl">Твій простір</h2>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition">
-              Усі модулі →
+            <div>
+              <p className="text-[10.5px] uppercase tracking-[0.26em] text-muted-foreground mb-3">
+                Твій простір
+              </p>
+              <h2 className="font-display text-[2rem] md:text-[2.5rem] leading-[1.05]">
+                Усі модулі під рукою
+              </h2>
+            </div>
+            <a href="#" className="text-[12.5px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground transition">
+              усі модулі →
             </a>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            <QuickTile
-              icon={ListTodo}
-              title="Швидкі задачі"
-              preview="4 нові · 2 завершені сьогодні"
-              meta="задачі"
-            />
-            <QuickTile
-              icon={NotebookPen}
-              title="Нотатки"
-              preview="Останнє: ідея для подкасту з Анною"
-              meta="думки"
-            />
-            <QuickTile
-              icon={Sparkles}
-              title="Life with AI"
-              preview="Щоденник, рефлексії, м'які підказки"
-              meta="ритуал"
-            />
-            <QuickTile
-              icon={TrendingUp}
-              title="Trading"
-              preview="Лео: ринок спокійний, +1.4% за тиждень"
-              meta="ринок"
-            />
-            <QuickTile
-              icon={BellRing}
-              title="Нагадування"
-              preview="Подзвонити Алісі о 17:30"
-              meta="скоро"
-            />
+            <QuickTile icon={ListTodo} title="Швидкі задачі" preview="4 нові · 2 завершені сьогодні" meta="задачі" />
+            <QuickTile icon={NotebookPen} title="Нотатки" preview="Останнє: ідея для подкасту з Анною" meta="думки" />
+            <QuickTile icon={Sparkles} title="Life with AI" preview="Щоденник, рефлексії, м'які підказки" meta="ритуал" />
+            <QuickTile icon={TrendingUp} title="Trading" preview="Лео: ринок спокійний, +1.4% за тиждень" meta="ринок" />
+            <QuickTile icon={BellRing} title="Нагадування" preview="Подзвонити Алісі о 17:30" meta="скоро" />
           </div>
         </section>
 
-        <footer className="pt-12 mt-12 border-t border-foreground/5 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
+        <footer className="pt-10 mt-10 border-t border-foreground/[0.06] flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           <p>Life OS · персональний простір Дарії</p>
-          <p>v1 · перший візуальний реліз</p>
+          <p>v2 · liquid glass редизайн</p>
         </footer>
       </div>
     </div>
