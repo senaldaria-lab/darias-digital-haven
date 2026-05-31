@@ -94,8 +94,8 @@
   /* surfaces */
   --surface-1: oklch(0.985 0.002 240);
   --surface-2: oklch(0.972 0.003 240);
-  --surface-glass: oklch(1 0 0 / 0.22);
-  --surface-glass-strong: oklch(1 0 0 / 0.46);
+  --surface-glass: oklch(1 0 0 / 0.13);
+  --surface-glass-strong: oklch(1 0 0 / 0.32);
 
   --gradient-pearl: linear-gradient(
     180deg,
@@ -114,10 +114,8 @@
     radial-gradient(circle at 82% 30%, oklch(0.978 0.003 238 / 0.6), transparent 55%),
     radial-gradient(circle at 55% 95%, oklch(0.985 0.002 240 / 0.5), transparent 60%);
 
-  --shadow-soft: 0 1px 2px oklch(0.3 0.005 255 / 0.04),
-    0 12px 32px -16px oklch(0.3 0.005 255 / 0.1);
-  --shadow-lift: 0 1px 2px oklch(0.3 0.005 255 / 0.04),
-    0 28px 70px -32px oklch(0.3 0.005 255 / 0.14);
+  --shadow-soft: 0 2px 20px -8px oklch(0.3 0.005 255 / 0.07);
+  --shadow-lift: 0 4px 40px -12px oklch(0.3 0.005 255 / 0.1);
   --shadow-press: inset 0 1px 0 oklch(1 0 0 / 0.55),
     0 1px 2px oklch(0.3 0.005 255 / 0.08);
 
@@ -161,30 +159,30 @@
   /* Liquid glass surfaces */
   .glass {
     background: var(--surface-glass);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
     box-shadow:
-      inset 0 1.5px 0 oklch(1 0 0 / 0.82),
-      inset 0 0 0 1px oklch(1 0 0 / 0.28),
-      0 4px 24px -4px oklch(0.15 0.004 240 / 0.1);
+      inset 0 1.5px 0 oklch(1 0 0 / 0.7),
+      inset 0 0 0 1px oklch(1 0 0 / 0.2),
+      var(--shadow-soft);
   }
   .glass-lift {
     background: var(--surface-glass);
-    backdrop-filter: blur(28px) saturate(170%);
-    -webkit-backdrop-filter: blur(28px) saturate(170%);
+    backdrop-filter: blur(36px) saturate(170%);
+    -webkit-backdrop-filter: blur(36px) saturate(170%);
     box-shadow:
-      inset 0 1.5px 0 oklch(1 0 0 / 0.88),
-      inset 0 0 0 1px oklch(1 0 0 / 0.32),
-      0 8px 40px -8px oklch(0.15 0.004 240 / 0.13);
+      inset 0 1.5px 0 oklch(1 0 0 / 0.78),
+      inset 0 0 0 1px oklch(1 0 0 / 0.24),
+      var(--shadow-lift);
   }
   .glass-solid {
     background: var(--surface-glass-strong);
-    backdrop-filter: blur(24px) saturate(155%);
-    -webkit-backdrop-filter: blur(24px) saturate(155%);
+    backdrop-filter: blur(32px) saturate(155%);
+    -webkit-backdrop-filter: blur(32px) saturate(155%);
     box-shadow:
-      inset 0 1.5px 0 oklch(1 0 0 / 0.85),
-      inset 0 0 0 1px oklch(1 0 0 / 0.35),
-      0 4px 20px -4px oklch(0.15 0.004 240 / 0.1);
+      inset 0 1.5px 0 oklch(1 0 0 / 0.75),
+      inset 0 0 0 1px oklch(1 0 0 / 0.28),
+      var(--shadow-soft);
   }
 
   /* Liquid glass button — universal transparent pill */

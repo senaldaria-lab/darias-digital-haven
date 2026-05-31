@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Command, Home, Bot, BarChart2, ShoppingBag, type LucideIcon } from "lucide-react";
 
 import bgAiSpace from "@/assets/bg-ai-space.png";
@@ -11,30 +12,34 @@ import maya from "@/assets/maya.png";
 
 import { AssistantCard } from "@/components/life-os/AssistantCard";
 
-const spaces: { icon: LucideIcon; title: string; description: string; tags: string[] }[] = [
+const spaces: { icon: LucideIcon; title: string; description: string; tags: string[]; href: "/spaces/daria-home" | "/spaces/life-with-ai" | "/spaces/trading-os" | "/spaces/bianca-os" }[] = [
   {
     icon: Home,
     title: "Daria Home",
     description: "Особистий простір — нотатки, ідеї, фокус і планування твого ритму.",
     tags: ["нотатки", "ідеї", "фокус", "планування"],
+    href: "/spaces/daria-home",
   },
   {
     icon: Bot,
     title: "Life with AI",
     description: "Контент, Instagram, навчання з AI і тренди — усе в одному просторі.",
     tags: ["контент", "Instagram", "AI", "тренди"],
+    href: "/spaces/life-with-ai",
   },
   {
     icon: BarChart2,
     title: "Trading OS",
     description: "Торговий бот, сигнали, контроль ризиків і звіти по ринку.",
     tags: ["бот", "сигнали", "ризики", "звіти"],
+    href: "/spaces/trading-os",
   },
   {
     icon: ShoppingBag,
     title: "Bianca OS",
     description: "Bianca Mobilya, BohoConcept, продажі, Shopify і ліди.",
     tags: ["Shopify", "продажі", "ліди", "BohoConcept"],
+    href: "/spaces/bianca-os",
   },
 ];
 
@@ -106,9 +111,9 @@ export function LifeOS() {
       }}
     >
 
-      <div className="relative max-w-[1380px] mx-auto px-5 md:px-10 pt-6 pb-24">
+      <div className="relative max-w-[1380px] mx-auto px-5 md:px-10 pt-8 pb-32">
         {/* header */}
-        <header className="flex items-center justify-between gap-4 mb-10">
+        <header className="flex items-center justify-between gap-4 mb-14">
           <div className="flex items-center gap-3">
             <div className="relative h-10 w-10 rounded-2xl glass-solid grid place-items-center">
               <div className="h-2.5 w-2.5 rounded-sm rotate-45" style={{ background: "var(--gradient-espresso)" }} />
@@ -152,7 +157,7 @@ export function LifeOS() {
         </header>
 
         {/* hero */}
-        <section className="grid lg:grid-cols-[3fr_2fr] gap-8 mb-12 items-end">
+        <section className="grid lg:grid-cols-[3fr_2fr] gap-8 mb-20 items-end">
           <div className="relative rounded-[36px] p-10 md:p-16 overflow-hidden glass-lift">
             <div aria-hidden className="absolute inset-0 bg-aurora opacity-70" />
             <div aria-hidden className="absolute inset-0 noise opacity-50" />
@@ -197,8 +202,8 @@ export function LifeOS() {
         </section>
 
         {/* team report */}
-        <section className="mb-10">
-          <div className="mb-5 flex items-center gap-3">
+        <section className="mb-20">
+          <div className="mb-6 flex items-center gap-3">
             <p className="label-premium">Звіт команди</p>
             <span className="h-px flex-1 bg-foreground/[0.06]" />
             <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
@@ -235,7 +240,7 @@ export function LifeOS() {
         </section>
 
         {/* team header */}
-        <section className="mb-8 flex items-end justify-between flex-wrap gap-6">
+        <section className="mb-10 flex items-end justify-between flex-wrap gap-6">
           <div>
             <p className="label-premium mb-3">Твоя команда</p>
             <h2 className="font-display text-[2.25rem] md:text-[3rem] leading-[1.05] text-foreground text-balance">
@@ -247,7 +252,7 @@ export function LifeOS() {
           </p>
         </section>
 
-        <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+        <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-28">
           {assistants.map((a, i) => (
             <AssistantCard key={a.name} {...a} index={i} />
           ))}
@@ -268,7 +273,7 @@ export function LifeOS() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {spaces.map(({ icon: Icon, title, description, tags }) => (
+            {spaces.map(({ icon: Icon, title, description, tags, href }) => (
               <div key={title} className="glass-lift rounded-[28px] p-7 flex flex-col gap-5 relative overflow-hidden group transition-all duration-500 hover:-translate-y-1.5">
                 {/* icon */}
                 <div className="h-11 w-11 rounded-2xl glass-solid grid place-items-center">
@@ -296,9 +301,9 @@ export function LifeOS() {
                     <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/30" />
                     Скоро
                   </span>
-                  <button className="rounded-full btn-glass px-5 py-2 text-[12px] font-medium text-foreground/80">
+                  <Link to={href} className="rounded-full btn-glass px-5 py-2 text-[12px] font-medium text-foreground/80">
                     Відкрити
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
