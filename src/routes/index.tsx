@@ -185,10 +185,10 @@ function LifeOS() {
 
             <div className="relative space-y-5 flex-1">
               {[
-                { k: "Енергія", v: "ясна", bar: 78, tone: "cool" },
-                { k: "Команда", v: "6 готові", bar: 100, tone: "warm" },
-                { k: "Фокус", v: "глибокий", bar: 64, tone: "cool" },
-                { k: "Календар", v: "вільно до 14:00", bar: 40, tone: "warm" },
+                { k: "Енергія", v: "ясна", bar: 78, tone: "warm" },
+                { k: "Команда", v: "6 готові", bar: 100, tone: "espresso" },
+                { k: "Фокус", v: "глибокий", bar: 64, tone: "warm" },
+                { k: "Календар", v: "вільно до 14:00", bar: 40, tone: "espresso" },
               ].map((s) => (
                 <div key={s.k}>
                   <div className="flex items-baseline justify-between mb-2">
@@ -198,9 +198,9 @@ function LifeOS() {
                   <div className="h-1 rounded-full bg-foreground/[0.05] overflow-hidden">
                     <div className="h-full rounded-full" style={{
                       width: `${s.bar}%`,
-                      background: s.tone === "cool"
-                        ? "linear-gradient(90deg, oklch(0.78 0.04 245), oklch(0.5 0.04 245))"
-                        : "linear-gradient(90deg, oklch(0.85 0.03 70), oklch(0.5 0.04 55))",
+                      background: s.tone === "warm"
+                        ? "linear-gradient(90deg, oklch(0.88 0.025 75), oklch(0.6 0.04 60))"
+                        : "linear-gradient(90deg, oklch(0.7 0.04 55), oklch(0.4 0.045 50))",
                     }} />
                   </div>
                 </div>
