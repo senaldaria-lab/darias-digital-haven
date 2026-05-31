@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { CheckCircle2, Heart, Briefcase, Clock } from "lucide-react";
 
 const items = [
-  { icon: CheckCircle2, label: "3 важливі задачі", meta: "сьогодні", tint: "oklch(0.92 0.02 240)" },
+  { icon: CheckCircle2, label: "3 важливі задачі", meta: "сьогодні", tint: "oklch(0.95 0.018 75)" },
   { icon: Heart, label: "1 особистий фокус", meta: "для себе", tint: "oklch(0.94 0.022 70)" },
-  { icon: Briefcase, label: "1 бізнес-фокус", meta: "стратегія", tint: "oklch(0.9 0.025 245)" },
-  { icon: Clock, label: "1 незавершена справа", meta: "перенесено", tint: "oklch(0.93 0.012 60)" },
+  { icon: Briefcase, label: "1 бізнес-фокус", meta: "стратегія", tint: "oklch(0.93 0.02 65)" },
+  { icon: Clock, label: "1 незавершена справа", meta: "перенесено", tint: "oklch(0.95 0.014 80)" },
 ];
 
 export function TodayBlock() {
