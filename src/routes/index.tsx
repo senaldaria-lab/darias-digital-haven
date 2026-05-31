@@ -166,9 +166,9 @@ function LifeOS() {
 
             {/* decorative arc */}
             <svg aria-hidden className="absolute -bottom-20 -right-10 w-[420px] h-[420px] opacity-25" viewBox="0 0 400 400">
-              <circle cx="200" cy="200" r="180" fill="none" stroke="oklch(0.32 0.035 55)" strokeWidth="0.5" />
-              <circle cx="200" cy="200" r="140" fill="none" stroke="oklch(0.5 0.04 245)" strokeWidth="0.5" />
-              <circle cx="200" cy="200" r="100" fill="none" stroke="oklch(0.32 0.035 55)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="180" fill="none" stroke="oklch(0.4 0.045 55)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="140" fill="none" stroke="oklch(0.55 0.03 70)" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="100" fill="none" stroke="oklch(0.4 0.045 55)" strokeWidth="0.5" />
             </svg>
           </div>
 
