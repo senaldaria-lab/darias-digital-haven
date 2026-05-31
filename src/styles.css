@@ -79,7 +79,7 @@
   --ring: oklch(0.55 0.03 60);
 
   /* extended palette */
-  --espresso: oklch(0.32 0.035 55);
+  --espresso: oklch(0.38 0.045 50);
   --taupe: oklch(0.55 0.025 60);
   --pearl: oklch(0.985 0.004 240);
   --stone: oklch(0.92 0.012 70);
@@ -95,7 +95,7 @@
 
   --gradient-pearl: linear-gradient(135deg, oklch(0.985 0.004 240), oklch(0.96 0.008 245));
   --gradient-warm-cool: linear-gradient(140deg, oklch(0.97 0.012 70) 0%, oklch(0.95 0.014 240) 100%);
-  --gradient-espresso: linear-gradient(135deg, oklch(0.36 0.04 55), oklch(0.28 0.03 50));
+  --gradient-espresso: linear-gradient(135deg, oklch(0.44 0.05 55), oklch(0.34 0.04 48));
   --gradient-aurora: radial-gradient(circle at 18% 22%, oklch(0.92 0.04 240 / 0.55), transparent 55%),
     radial-gradient(circle at 82% 30%, oklch(0.95 0.025 70 / 0.65), transparent 55%),
     radial-gradient(circle at 55% 95%, oklch(0.88 0.035 250 / 0.5), transparent 60%);
