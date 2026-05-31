@@ -140,7 +140,7 @@ function LifeOS() {
             </div>
             <div className="hidden sm:block leading-none">
               <p className="text-xs font-medium">Дарія</p>
-              <p className="text-[10px] text-muted-foreground mt-0.5">{time} · Київ</p>
+              <p className="text-[10px] text-muted-foreground mt-0.5 min-h-[12px]">{time ? `${time} · Київ` : "Київ"}</p>
             </div>
           </div>
         </header>
