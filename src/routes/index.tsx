@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ListTodo, NotebookPen, Sparkles, TrendingUp, BellRing } from "lucide-react";
 
@@ -77,8 +78,13 @@ const assistants = [
 ];
 
 function LifeOS() {
-  const now = new Date();
-  const time = now.toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit" });
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const update = () => setTime(new Date().toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit" }));
+    update();
+    const id = setInterval(update, 30_000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-warm">
@@ -134,7 +140,7 @@ function LifeOS() {
             </div>
             <div className="hidden sm:block leading-none">
               <p className="text-xs font-medium">Дарія</p>
-              <p className="text-[10px] text-muted-foreground mt-0.5">{time} · Київ</p>
+              <p className="text-[10px] text-muted-foreground mt-0.5 min-h-[12px]">{time ? `${time} · Київ` : "Київ"}</p>
             </div>
           </div>
         </header>
@@ -146,15 +152,14 @@ function LifeOS() {
             <div className="relative">
               <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">
                 <span className="h-px w-8 bg-foreground/30" />
-                Добрий ранок
+                Добрий ранок, Дарія
               </p>
               <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.02] text-balance">
-                Дарія,<br />твій особистий<br />
-                <span className="italic text-cool">цифровий офіс</span> готовий.
+                Твій особистий<br />
+                <span className="italic text-cool">цифровий офіс</span>.
               </h1>
               <p className="mt-8 max-w-lg text-base text-muted-foreground leading-relaxed">
-                Спокійне місце для роботи, фінансів, контенту і сім'ї. Команда поруч —
-                просто скажи, з чого почати сьогодні.
+                Що сьогодні важливо для тебе? Команда поруч — обери, з чого почати ранок.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
