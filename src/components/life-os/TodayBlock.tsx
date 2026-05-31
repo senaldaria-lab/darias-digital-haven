@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { CheckCircle2, Heart, Briefcase, Clock } from "lucide-react";
 
 const items = [
