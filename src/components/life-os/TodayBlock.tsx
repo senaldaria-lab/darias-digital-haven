@@ -9,13 +9,18 @@ const items = [
 ];
 
 export function TodayBlock() {
+  const [today, setToday] = useState("");
+  useEffect(() => {
+    setToday(new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" }));
+  }, []);
+
   return (
     <section className="relative rounded-[28px] glass-lift p-8 overflow-hidden">
       <div aria-hidden className="absolute inset-0 bg-holo opacity-50 pointer-events-none" />
       <div className="relative flex flex-wrap items-end justify-between gap-6 mb-8">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
-            Сьогодні · {new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 min-h-[14px]">
+            {today && <>Сьогодні · {today}</>}
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground text-balance">
             Що сьогодні важливо для тебе?
