@@ -152,15 +152,14 @@ function LifeOS() {
             <div className="relative">
               <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">
                 <span className="h-px w-8 bg-foreground/30" />
-                Добрий ранок
+                Добрий ранок, Дарія
               </p>
               <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.02] text-balance">
-                Дарія,<br />твій особистий<br />
-                <span className="italic text-cool">цифровий офіс</span> готовий.
+                Твій особистий<br />
+                <span className="italic text-cool">цифровий офіс</span>.
               </h1>
               <p className="mt-8 max-w-lg text-base text-muted-foreground leading-relaxed">
-                Спокійне місце для роботи, фінансів, контенту і сім'ї. Команда поруч —
-                просто скажи, з чого почати сьогодні.
+                Що сьогодні важливо для тебе? Команда поруч — обери, з чого почати ранок.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
