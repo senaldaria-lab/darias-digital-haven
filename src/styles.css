@@ -58,8 +58,8 @@
   --popover: oklch(0.995 0.003 240);
   --popover-foreground: oklch(0.26 0.018 50);
 
-  /* espresso brown primary — replaces black on active CTAs */
-  --primary: oklch(0.32 0.035 55);
+  /* espresso brown primary — warm, soft, elegant */
+  --primary: oklch(0.38 0.045 50);
   --primary-foreground: oklch(0.985 0.004 240);
 
   --secondary: oklch(0.95 0.008 240);
