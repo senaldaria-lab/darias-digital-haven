@@ -48,8 +48,8 @@
 :root {
   --radius: 1rem;
 
-  /* pearl base with cool undertone */
-  --background: oklch(0.985 0.004 240);
+  /* pearl base with warm beige undertone */
+  --background: oklch(0.987 0.005 80);
   --foreground: oklch(0.26 0.018 50);
 
   --card: oklch(0.995 0.003 240 / 0.65);
