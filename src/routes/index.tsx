@@ -62,19 +62,19 @@ function LifeOS() {
       {/* abstract digital studio background */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         {/* soft architectural orbs */}
-        <div className="absolute -top-60 -left-40 h-[640px] w-[640px] rounded-full blur-[120px] opacity-50 drift"
-          style={{ background: "radial-gradient(circle, oklch(0.9 0.04 240 / 0.8), transparent 70%)" }} />
-        <div className="absolute -bottom-60 -right-40 h-[700px] w-[700px] rounded-full blur-[140px] opacity-55"
-          style={{ background: "radial-gradient(circle, oklch(0.94 0.025 70 / 0.85), transparent 70%)" }} />
+        <div className="absolute -top-60 -left-40 h-[640px] w-[640px] rounded-full blur-[120px] opacity-55 drift"
+          style={{ background: "radial-gradient(circle, oklch(0.96 0.02 80 / 0.85), transparent 70%)" }} />
+        <div className="absolute -bottom-60 -right-40 h-[700px] w-[700px] rounded-full blur-[140px] opacity-60"
+          style={{ background: "radial-gradient(circle, oklch(0.95 0.022 70 / 0.85), transparent 70%)" }} />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[420px] w-[420px] rounded-full blur-[110px] opacity-35"
-          style={{ background: "radial-gradient(circle, oklch(0.86 0.035 250 / 0.7), transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, oklch(0.93 0.018 75 / 0.75), transparent 70%)" }} />
 
         {/* wave svg */}
-        <svg className="absolute inset-x-0 top-0 w-full h-[800px] opacity-[0.07]" viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <svg className="absolute inset-x-0 top-0 w-full h-[800px] opacity-[0.06]" viewBox="0 0 1440 800" preserveAspectRatio="none">
           <defs>
             <linearGradient id="ln" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="oklch(0.32 0.035 55)" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="oklch(0.5 0.04 245)" stopOpacity="0.2" />
+              <stop offset="0%" stopColor="oklch(0.4 0.04 55)" stopOpacity="0.55" />
+              <stop offset="100%" stopColor="oklch(0.6 0.03 70)" stopOpacity="0.2" />
             </linearGradient>
           </defs>
           {Array.from({ length: 9 }).map((_, i) => (
@@ -86,7 +86,7 @@ function LifeOS() {
         {/* floating glass shards */}
         <div className="absolute top-[18%] right-[6%] h-24 w-24 rounded-3xl glass-solid float-soft rotate-12" />
         <div className="absolute top-[58%] left-[3%] h-16 w-40 rounded-full glass-solid float-soft" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-[12%] left-[14%] h-2.5 w-2.5 rounded-full bg-cool/50" />
+        <div className="absolute top-[12%] left-[14%] h-2.5 w-2.5 rounded-full bg-taupe/40" />
         <div className="absolute top-[42%] right-[16%] h-1.5 w-1.5 rounded-full bg-taupe/40" />
       </div>
 
