@@ -174,8 +174,8 @@ function LifeOS() {
 
           {/* state panel */}
           <div className="rounded-[36px] glass-lift p-8 flex flex-col gap-6 relative overflow-hidden">
-            <div aria-hidden className="absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-40"
-              style={{ background: "radial-gradient(circle, oklch(0.9 0.04 245 / 0.7), transparent 70%)" }} />
+            <div aria-hidden className="absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-50"
+              style={{ background: "radial-gradient(circle, oklch(0.94 0.022 75 / 0.85), transparent 70%)" }} />
             <div className="relative flex items-center justify-between">
               <p className="text-[10.5px] uppercase tracking-[0.24em] text-muted-foreground">Простір</p>
               <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
