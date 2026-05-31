@@ -11,19 +11,19 @@ interface AssistantCardProps {
 
 const accents = {
   warm: {
-    bg: "linear-gradient(165deg, oklch(0.97 0.012 70) 0%, oklch(0.92 0.02 75) 100%)",
-    halo: "radial-gradient(120% 70% at 50% 100%, oklch(0.94 0.025 70 / 0.6), transparent 65%)",
-    tag: "oklch(0.55 0.04 60)",
+    bg: "linear-gradient(165deg, oklch(0.99 0.005 70) 0%, oklch(0.955 0.014 75) 100%)",
+    halo: "radial-gradient(120% 70% at 50% 100%, oklch(0.95 0.018 70 / 0.55), transparent 65%)",
+    tag: "oklch(0.5 0.035 60)",
   },
   cool: {
-    bg: "linear-gradient(165deg, oklch(0.96 0.012 240) 0%, oklch(0.91 0.022 245) 100%)",
-    halo: "radial-gradient(120% 70% at 50% 100%, oklch(0.9 0.04 245 / 0.55), transparent 65%)",
-    tag: "oklch(0.5 0.04 245)",
+    bg: "linear-gradient(165deg, oklch(0.99 0.003 240) 0%, oklch(0.955 0.008 80) 100%)",
+    halo: "radial-gradient(120% 70% at 50% 100%, oklch(0.95 0.012 80 / 0.55), transparent 65%)",
+    tag: "oklch(0.5 0.025 60)",
   },
   neutral: {
-    bg: "linear-gradient(165deg, oklch(0.97 0.006 240) 0%, oklch(0.93 0.012 240) 100%)",
-    halo: "radial-gradient(120% 70% at 50% 100%, oklch(0.88 0.02 240 / 0.5), transparent 65%)",
-    tag: "oklch(0.5 0.02 240)",
+    bg: "linear-gradient(165deg, oklch(0.992 0.003 80) 0%, oklch(0.96 0.008 70) 100%)",
+    halo: "radial-gradient(120% 70% at 50% 100%, oklch(0.94 0.012 70 / 0.5), transparent 65%)",
+    tag: "oklch(0.5 0.022 60)",
   },
 };
 
