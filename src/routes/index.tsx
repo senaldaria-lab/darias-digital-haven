@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ListTodo, NotebookPen, Sparkles, TrendingUp, BellRing } from "lucide-react";
 
