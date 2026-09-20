@@ -5,7 +5,14 @@
  * server-side. Nothing in this app talks to an exchange, and no API keys
  * ever live in the browser.
  */
-export const integrations = {
+export interface Integrations {
+  binanceMarketData: boolean;
+  exchangeAccount: boolean;
+  newsFeed: boolean;
+  agentBackend: boolean;
+}
+
+export const integrations: Integrations = {
   /** Live Binance market data feed (prices, klines). */
   binanceMarketData: false,
   /** Exchange account connection (read-only positions / fills). */
