@@ -21,9 +21,9 @@ export const integrations: Integrations = {
   newsFeed: false,
   /** LLM / agent backend that would actually run the analyses. */
   agentBackend: false,
-} as const;
+};
 
-export type IntegrationKey = keyof typeof integrations;
+export type IntegrationKey = keyof Integrations;
 
 export const TZ = "Europe/Istanbul";
 
