@@ -268,7 +268,8 @@ export function runCoordinatorDemo(
         "Якщо таймфрейми суперечать одне одному або ринок у вузькому рейнджі перед подією.",
       invalidation: "Вихід за межі рейнджу з обсягом переводить у LONG або SHORT.",
     },
-  ].sort((a, b) => (a.bias === top ? -1 : b.bias === top ? 1 : 0));
+  ];
+  scenarios.sort((a, b) => (a.bias === top ? -1 : b.bias === top ? 1 : 0));
 
   return {
     agentId: "coordinator",
