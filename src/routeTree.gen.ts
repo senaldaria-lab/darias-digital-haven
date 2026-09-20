@@ -9,94 +9,72 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ChartRouteImport } from './routes/chart'
+import { Route as AgentsRouteImport } from './routes/agents'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SpacesTradingOsRouteImport } from './routes/spaces/trading-os'
-import { Route as SpacesLifeWithAiRouteImport } from './routes/spaces/life-with-ai'
-import { Route as SpacesDariaHomeRouteImport } from './routes/spaces/daria-home'
-import { Route as SpacesBiancaOsRouteImport } from './routes/spaces/bianca-os'
 
+const ChartRoute = ChartRouteImport.update({
+  id: '/chart',
+  path: '/chart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsRoute = AgentsRouteImport.update({
+  id: '/agents',
+  path: '/agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SpacesTradingOsRoute = SpacesTradingOsRouteImport.update({
-  id: '/spaces/trading-os',
-  path: '/spaces/trading-os',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SpacesLifeWithAiRoute = SpacesLifeWithAiRouteImport.update({
-  id: '/spaces/life-with-ai',
-  path: '/spaces/life-with-ai',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SpacesDariaHomeRoute = SpacesDariaHomeRouteImport.update({
-  id: '/spaces/daria-home',
-  path: '/spaces/daria-home',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SpacesBiancaOsRoute = SpacesBiancaOsRouteImport.update({
-  id: '/spaces/bianca-os',
-  path: '/spaces/bianca-os',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/spaces/bianca-os': typeof SpacesBiancaOsRoute
-  '/spaces/daria-home': typeof SpacesDariaHomeRoute
-  '/spaces/life-with-ai': typeof SpacesLifeWithAiRoute
-  '/spaces/trading-os': typeof SpacesTradingOsRoute
+  '/agents': typeof AgentsRoute
+  '/chart': typeof ChartRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/spaces/bianca-os': typeof SpacesBiancaOsRoute
-  '/spaces/daria-home': typeof SpacesDariaHomeRoute
-  '/spaces/life-with-ai': typeof SpacesLifeWithAiRoute
-  '/spaces/trading-os': typeof SpacesTradingOsRoute
+  '/agents': typeof AgentsRoute
+  '/chart': typeof ChartRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/spaces/bianca-os': typeof SpacesBiancaOsRoute
-  '/spaces/daria-home': typeof SpacesDariaHomeRoute
-  '/spaces/life-with-ai': typeof SpacesLifeWithAiRoute
-  '/spaces/trading-os': typeof SpacesTradingOsRoute
+  '/agents': typeof AgentsRoute
+  '/chart': typeof ChartRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/spaces/bianca-os'
-    | '/spaces/daria-home'
-    | '/spaces/life-with-ai'
-    | '/spaces/trading-os'
+  fullPaths: '/' | '/agents' | '/chart'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/spaces/bianca-os'
-    | '/spaces/daria-home'
-    | '/spaces/life-with-ai'
-    | '/spaces/trading-os'
-  id:
-    | '__root__'
-    | '/'
-    | '/spaces/bianca-os'
-    | '/spaces/daria-home'
-    | '/spaces/life-with-ai'
-    | '/spaces/trading-os'
+  to: '/' | '/agents' | '/chart'
+  id: '__root__' | '/' | '/agents' | '/chart'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  SpacesBiancaOsRoute: typeof SpacesBiancaOsRoute
-  SpacesDariaHomeRoute: typeof SpacesDariaHomeRoute
-  SpacesLifeWithAiRoute: typeof SpacesLifeWithAiRoute
-  SpacesTradingOsRoute: typeof SpacesTradingOsRoute
+  AgentsRoute: typeof AgentsRoute
+  ChartRoute: typeof ChartRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/chart': {
+      id: '/chart'
+      path: '/chart'
+      fullPath: '/chart'
+      preLoaderRoute: typeof ChartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents': {
+      id: '/agents'
+      path: '/agents'
+      fullPath: '/agents'
+      preLoaderRoute: typeof AgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,43 +82,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/spaces/trading-os': {
-      id: '/spaces/trading-os'
-      path: '/spaces/trading-os'
-      fullPath: '/spaces/trading-os'
-      preLoaderRoute: typeof SpacesTradingOsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spaces/life-with-ai': {
-      id: '/spaces/life-with-ai'
-      path: '/spaces/life-with-ai'
-      fullPath: '/spaces/life-with-ai'
-      preLoaderRoute: typeof SpacesLifeWithAiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spaces/daria-home': {
-      id: '/spaces/daria-home'
-      path: '/spaces/daria-home'
-      fullPath: '/spaces/daria-home'
-      preLoaderRoute: typeof SpacesDariaHomeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spaces/bianca-os': {
-      id: '/spaces/bianca-os'
-      path: '/spaces/bianca-os'
-      fullPath: '/spaces/bianca-os'
-      preLoaderRoute: typeof SpacesBiancaOsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  SpacesBiancaOsRoute: SpacesBiancaOsRoute,
-  SpacesDariaHomeRoute: SpacesDariaHomeRoute,
-  SpacesLifeWithAiRoute: SpacesLifeWithAiRoute,
-  SpacesTradingOsRoute: SpacesTradingOsRoute,
+  AgentsRoute: AgentsRoute,
+  ChartRoute: ChartRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
